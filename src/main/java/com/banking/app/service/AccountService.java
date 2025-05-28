@@ -1,0 +1,8 @@
+package com.banking.app.service;
+
+import com.banking.app.dto.AccountDto;
+
+public interface AccountService {
+	AccountDto createAccountDto(AccountDto accountDto);
+	
+}
