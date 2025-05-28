@@ -1,6 +1,5 @@
 package com.banking.app.service.implementation;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.banking.app.dto.AccountDto;
@@ -25,5 +24,11 @@ public class AccountServiceImpl implements AccountService {
 		Account account = AccountMapper.mapToAccount(accountDto);
 		Account savedAccount = accountRepo.save(account);
 		return AccountMapper.mapToAccountDto(savedAccount);
+	}
+	
+	@Override 
+	public AccountDto getAccountDto(Long id) {
+		Account account = accountRepo.findById(id).orElseThrow(()-> new RuntimeException("Account does not exist"));
+		return AccountMapper.mapToAccountDto(account);
 	}
 }
