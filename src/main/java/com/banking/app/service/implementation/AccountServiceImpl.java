@@ -37,8 +37,7 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public AccountDto depositOrWithdraw(Long id, Double amount, Boolean isDeposit) {
-		// TODO Auto-generated method stub
-		Account 
+		// TODO Auto-generated method stub 
 		Account account = accountRepo.findById(id).orElseThrow(()-> new RuntimeException("Account does not exist"));
 		double total = 0;
 		if(isDeposit) {
